@@ -9,10 +9,7 @@
 $Host.UI.RawUI.WindowTitle = "Test 1 script - Web Server Administration"
 $ErrorActionPreference = "Stop"
 
-# Check if the following tasks are scheduled:
-#   ResumeWorkflows
-#   CompleteLab
-# and if they are end them
+# Check if the following tasks are scheduled and if they are end them
 if (Get-ScheduledTask | Where-Object { $_.TaskName -eq "ResumeWorkflows" }) {
     Get-ScheduledTask -TaskName ResumeWorkflows | Unregister-ScheduledTask -Confirm:$false
 }
